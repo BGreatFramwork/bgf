@@ -1,0 +1,47 @@
+# Compiled class file
+*.class
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+
+# 2026.10.01 :: Log file 제외
+*.log
+
+# 2026.10.01 :: plsql backup file 제외
+*.~sql
+*.~pdc
+
+# 2026.10.01 :: Maven - Maven이 빌드하면서 생성하는 결과물 폴더를 Git 관리 대상에서 제외
+target/
+
+# 2026.10.01 :: STS - Spring Tool Suite(STS)가 생성하는 캐시 파일 제외
+.springBeans
+
+# 2026.10.01 :: nbdf 프로젝트 설정 제외
+target/m2e-wtp/web-resources/META-INF/maven/com.nbdf/nbdf/pom.properties
+
+# 2026.10.01 :: 넥사크로 설정 제외
+src/main/nbdf-ui/$Geninfo$.geninfo
+$*.xfdl$
+*.xfdl~
+*.bak
+
+# 2026.10.01 :: Eclipse APT(Annotation Processing Tool) 제외
+.factorypath
