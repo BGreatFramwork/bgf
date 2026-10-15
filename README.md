@@ -1,2 +1,7 @@
 # bgf
-built1 great framwork
+● built1 great framework
+
+ ☆ 2026-10-15
+  1. 이클립스 서버 환경 구성 완료
+  2. 데이터베이스 구성 완료
+  3. 깃허브 저장장소 설정 완료
