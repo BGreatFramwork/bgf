@@ -1,0 +1,17 @@
+{
+  "name": "bgfLib",
+  "version": "1.0.0.0001",
+  "description": "Built1 great framework library",
+  "license": "",
+  "scripts": [
+    "bgfLib/libDate.js"
+   ,"bgfLib/libUtil.js"
+   ,"bgfLib/libDataSet.js"
+  ],
+  "scriptsfilter": [    
+  ],
+  "objInfo" : [
+  ],
+  "designscripts" : [  
+  ]
+}

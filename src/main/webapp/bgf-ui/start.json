@@ -16,7 +16,10 @@
         "./nexacrolib/component/ComComp.js",
         "./nexacrolib/component/Grid.js",
         "./nexacrolib/component/ListView.js",
-        "./nexacrolib/component/DeviceAPI.js"
+        "./nexacrolib/component/DeviceAPI.js",
+        "./nexacrolib/component/bgfLib/libDate.js",
+        "./nexacrolib/component/bgfLib/libUtil.js",
+        "./nexacrolib/component/bgfLib/libDataSet.js"
         ],
         "environment" :
         [    

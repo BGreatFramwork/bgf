@@ -2,7 +2,70 @@
 <FDL version="2.1">
   <Form id="Form_Work" width="1080" height="670" titletext="Form_Work">
     <Layouts>
-      <Layout width="1080" height="670" screenid="Desktop_screen"/>
+      <Layout width="1080" height="670" screenid="Desktop_screen">
+        <Button id="btn_search" taborder="0" text="조회" left="20" top="20" width="120" height="40" onclick="btn_search_onclick"/>
+        <Grid id="Grid00" taborder="1" left="20" top="75" width="1040" height="245"/>
+        <Button id="btn_alert" taborder="2" text="alert test" left="930" top="20" width="120" height="40" onclick="btn_alert_onclick"/>
+      </Layout>
     </Layouts>
+    <Objects>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <Column id="CODE_TYPE" type="STRING" size="256"/>
+          <Column id="CODE_TYPE_NM" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.btn_search_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_search.clearData();
+	var nRow = this.ds_search.addRow();
+	this.ds_search.setColumn(nRow, "CODE_TYPE"   , "CREATE_TYPE_CD");
+	this.ds_search.setColumn(nRow, "CODE_TYPE_NM", "생성");
+	
+	var sSvcID 			= "selectCodeList";
+	var sSvcURL			= "svcUrl::com/COM10000M/selectCodeList.do";
+	var sInDatasets 	= "inSearch=ds_search";
+	var sOutDatasets 	= "ds_codeType=outSelectCodeTypeList";
+	var sArgument 		= "userId=1234";// + app.userId;
+	var sCallbackFunc 	= "fn_callback";
+	
+	// 공통코드 조회
+	this.gfn_transaction(sSvcID, sSvcURL, sInDatasets, sOutDatasets, sArgument, sCallbackFunc);
+};
+
+//콜백 함수
+this.fn_callback = function(sSvcID, nErrCd, sErrMsg)
+{
+	if(nErrCd < 0) {
+		alert(sErrMsg);
+		return;
+	}
+
+	switch(sSvcID) {
+		case "selectCodeList":
+			//trace("###########################################################");
+			//trace(this.ds_codeType.saveXML());
+			//trace("###########################################################");
+			
+			var nCnt = this.ds_codeType.rowcount;			
+			if (nCnt == 0) {
+				alert("조회조건에 일치하는 데이터가 존재하지 않습니다.");
+				//this.gfn_msgBox('MSG-A-10030'); //조회조건에 일치하는 데이터가 존재하지 않습니다.
+			}
+			break;
+	}
+};
+
+this.btn_alert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if(this.gfn_isNull("dddd")) {
+		alert("null입니다");
+	} else {
+		alert("null 아닙니다.");
+	}
+};
+]]></Script>
   </Form>
 </FDL>

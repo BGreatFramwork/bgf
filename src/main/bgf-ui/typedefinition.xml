@@ -6,6 +6,7 @@
     <Module url="Grid.json"/>
     <Module url="ListView.json"/>
     <Module url="DeviceAPI.json"/>
+    <Module url="bgfLib.json"/>
   </Modules>
   <Components>
     <Component type="JavaScript" id="Button" classname="nexacro.Button"/>
@@ -44,6 +45,9 @@
     <Service prefixid="extlib" type="resource" url="./_extlib_/" version="0" cachelevel="session" include_subdir="true"/>
     <Service prefixid="Base" type="form" url="./Base/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
     <Service prefixid="FrameBase" type="form" url="./FrameBase/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="svcUrl" type="JSP" version="0" cachelevel="session" include_subdir="false" communicationversion="0" url="http://localhost:8080/bgf/"/>
+    <Service prefixid="bgfLib" type="form" url="./nexacrolib/component/bgfLib/" version="0" cachelevel="session" include_subdir="true" communicationversion="0"/>
+    <Service prefixid="com" type="form" url="./com/" version="0" cachelevel="session" include_subdir="true" communicationversion="0"/>
   </Services>
   <Protocols/>
   <DeviceAdaptors/>
